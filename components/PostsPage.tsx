@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { CreatePost } from "./CreatePost";
+import React from "react";
 
 type Post = {
   id: string;
@@ -13,7 +14,6 @@ export default function PostsPage() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    // Fetch initial posts
     const fetchPosts = async () => {
       const response = await fetch("/api/posts");
       const data = await response.json();

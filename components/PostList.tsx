@@ -5,6 +5,7 @@ import { PostView } from "./PostView";
 import Image from "next/image";
 import { CreatePost } from "./CreatePost";
 import { useUser } from "@clerk/nextjs";
+import React from "react";
 
 type Post = {
   id: string;

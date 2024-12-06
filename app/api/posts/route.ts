@@ -15,7 +15,6 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    // Ensure user exists in our database
     await prisma.user.upsert({
       where: { id: userId },
       create: {
@@ -52,7 +51,6 @@ export async function POST(request: Request) {
   }
 }
 
-// Get all posts
 export async function GET() {
   try {
     const posts = await prisma.post.findMany({
@@ -61,9 +59,9 @@ export async function GET() {
       },
     });
     return NextResponse.json(posts);
-  } catch (error) {
+  } catch (e) {
     return NextResponse.json(
-      { error: "Failed to fetch posts" },
+      { error: "Failed to fetch posts", e },
       { status: 500 }
     );
   }
@@ -87,9 +85,9 @@ export async function PUT(
       },
     });
     return NextResponse.json(post);
-  } catch (error) {
+  } catch (e) {
     return NextResponse.json(
-      { error: "Failed to update post" },
+      { error: "Failed to update post", e },
       { status: 500 }
     );
   }

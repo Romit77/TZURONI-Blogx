@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { auth } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs/server";
 
 export async function GET(
   request: Request,
@@ -26,18 +26,10 @@ export async function GET(
     }
 
     return NextResponse.json(post);
-  } catch (error) {
+  } catch (e) {
     return NextResponse.json(
-      { error: "Failed to fetch post" },
+      { error: "Failed to fetch post", e },
       { status: 500 }
     );
   }
 }
-
-// Remove or comment out the PUT method
-// export async function PUT(
-//   request: Request,
-//   context: { params: { id: string } }
-// ) {
-//   // Implementation
-// }

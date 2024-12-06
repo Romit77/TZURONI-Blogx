@@ -1,44 +1,25 @@
-# BlogX
+# BLOGX
 
-BlogX is a modern blogging platform built with Next.js, Clerk for authentication, Prisma for database management, and Google Generative AI for content summarization. This platform aims to provide a seamless blogging experience with advanced features.
+A modern blogging platform powered by AI, built with Next.js 14, Prisma, and Gemini.
 
-## Table of Contents
+## 🛠️ Tech Stack
 
-- [Setup Instructions](#setup-instructions)
-- [Deployment Process](#deployment-process)
-- [Architecture Overview](#architecture-overview)
-- [Testing](#testing) {{ edit_1 }}
-- [Troubleshooting](#troubleshooting) {{ edit_2 }}
+- **Framework**: Next.js 14 (App Router)
+- **Database**: PostgreSQL
+- **ORM**: Prisma
+- **Authentication**: Clerk
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn UI
+- **AI Integration**: Gemini API
 
-## Setup Instructions
+## 📦 Installation
 
-### Prerequisites
+1. Clone the repository:
 
-- Node.js (v14 or later)
-- npm or yarn
-- PostgreSQL database
-
-### Environment Variables
-
-Create a `.env` file in the root directory and add the following environment variables:
-
+```bash
+git https://github.com/Romit77/TZURONI-Blogx.git
+cd blogx
 ```
-DATABASE_URL="your_postgresql_database_url"
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="your_clerk_publishable_key"
-CLERK_SECRET_KEY="your_clerk_secret_key"
-GEMINI_API_KEY="your_gemini_api_key"
-```
-
-{{ edit_3 }}
-
-### Installation
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/yourusername/blogx.git
-   cd blogx
-   ```
 
 2. **Install dependencies:**
 
@@ -72,30 +53,6 @@ GEMINI_API_KEY="your_gemini_api_key"
    yarn dev
    ```
 
-## Deployment Process
-
-1. **Build the application:**
-
-   ```bash
-   npm run build
-   # or
-   yarn build
-   ```
-
-2. **Start the production server:**
-
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
-
-3. **Deploy to Vercel:**
-
-   - Connect your GitHub repository to Vercel.
-   - Set up environment variables in the Vercel dashboard.
-   - Deploy the application directly from Vercel.
-
 ## Architecture Overview
 
 - **Frontend:** Built with Next.js, utilizing server-side rendering and static site generation for optimal performance.
@@ -120,7 +77,7 @@ GEMINI_API_KEY="your_gemini_api_key"
 - **`next.config.js`:** Configures Next.js settings, including image domains and other build options.
 - **`tailwind.config.js`:** Configures Tailwind CSS settings and custom themes.
 
-## Testing {{ edit_1 }}
+## Testing
 
 To run tests, use the following command:
 
@@ -129,18 +86,6 @@ npm test
 # or
 yarn test
 ```
-
-## Troubleshooting {{ edit_2 }}
-
-If you encounter issues, consider the following steps:
-
-- Ensure all environment variables are correctly set.
-- Check the database connection and ensure it is running.
-- Review the logs for any error messages.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 

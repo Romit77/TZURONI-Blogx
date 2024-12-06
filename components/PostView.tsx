@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import React from "react";
 
 type PostViewProps = {
   post: {
@@ -95,7 +96,6 @@ export function PostView({ post, isOpen, onClose }: PostViewProps) {
         </DialogContent>
       </Dialog>
 
-      {/* Summary Modal */}
       <Dialog open={isSummaryModalOpen} onOpenChange={setIsSummaryModalOpen}>
         <DialogContent className="max-w-lg">
           <DialogHeader>
