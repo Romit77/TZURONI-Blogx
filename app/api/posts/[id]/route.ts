@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { auth } from "@clerk/nextjs/server";
 
 export async function GET(
   request: Request,
@@ -32,3 +33,11 @@ export async function GET(
     );
   }
 }
+
+// Remove or comment out the PUT method
+// export async function PUT(
+//   request: Request,
+//   context: { params: { id: string } }
+// ) {
+//   // Implementation
+// }

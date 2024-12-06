@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { PostView } from "./PostView";
 import Image from "next/image";
 import { CreatePost } from "./CreatePost";
+import { useUser } from "@clerk/nextjs";
 
 type Post = {
   id: string;
@@ -13,11 +14,13 @@ type Post = {
     email: string;
     name: string | null;
     imageUrl: string | null;
+    id: string;
   };
   createdAt: string;
 };
 
 export function PostList() {
+  const { user } = useUser();
   const [posts, setPosts] = useState<Post[]>([]);
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
 
@@ -59,6 +62,7 @@ export function PostList() {
                   width={24}
                   height={24}
                   className="rounded-full"
+                  layout="fixed"
                 />
               )}
               <span>By {post.author.name || post.author.email}</span>
