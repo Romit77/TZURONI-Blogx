@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { AuthButtons } from "@/components/AuthButtons";
 import { useUser } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
@@ -38,12 +37,7 @@ export default function Home() {
           </nav>
 
           <main className="flex-1 container mx-auto px-4 py-8 overflow-hidden">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center"
-            >
+            <div className="text-center">
               <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 via-blue-800 to-gray-100 bg-clip-text text-transparent p-10">
                 Explore Your Thoughts with Blogx.
               </h1>
@@ -65,7 +59,7 @@ export default function Home() {
                   </Link>
                 </p>
               )}
-            </motion.div>
+            </div>
           </main>
         </div>
       </div>
