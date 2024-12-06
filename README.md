@@ -77,15 +77,6 @@ cd blogx
 - **`next.config.js`:** Configures Next.js settings, including image domains and other build options.
 - **`tailwind.config.js`:** Configures Tailwind CSS settings and custom themes.
 
-## Testing
-
-To run tests, use the following command:
-
-```bash
-npm test
-# or
-yarn test
-```
 
 ## License
 
