@@ -13,7 +13,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useUser } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
 import React from "react";
 
 type CreatePostProps = {
@@ -21,7 +20,6 @@ type CreatePostProps = {
 };
 
 export function CreatePost({ onPostCreated }: CreatePostProps) {
-  const router = useRouter();
   const { user } = useUser();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
