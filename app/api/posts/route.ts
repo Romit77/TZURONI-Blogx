@@ -66,29 +66,3 @@ export async function GET() {
     );
   }
 }
-
-// Update a post
-export async function PUT(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
-  try {
-    const body = await request.json();
-    const post = await prisma.post.update({
-      where: {
-        id: params.id,
-      },
-      data: {
-        title: body.title,
-        content: body.content,
-        published: body.published,
-      },
-    });
-    return NextResponse.json(post);
-  } catch (e) {
-    return NextResponse.json(
-      { error: "Failed to update post", e },
-      { status: 500 }
-    );
-  }
-}

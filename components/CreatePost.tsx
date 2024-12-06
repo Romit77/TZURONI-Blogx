@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useUser } from "@clerk/nextjs";
 import React from "react";
+import { Post } from "@/types/post";
 
 type CreatePostProps = {
   onPostCreated: (post: Post) => void;
