@@ -16,7 +16,6 @@ export async function POST(request: Request) {
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    // More explicit prompt and error handling
     const prompt = `
       You are an expert summarizer. Provide a clear, concise summary of the following text.
       Ensure the summary captures the main points and key ideas.
@@ -27,10 +26,8 @@ export async function POST(request: Request) {
     try {
       const result = await model.generateContent(prompt);
 
-      // Log the entire result object for debugging
       console.log("Full Gemini API Result:", JSON.stringify(result, null, 2));
 
-      // Try multiple ways of extracting the text
       const summary =
         result.response?.text() ||
         result.response?.candidates?.[0]?.content?.parts?.[0]?.text ||
