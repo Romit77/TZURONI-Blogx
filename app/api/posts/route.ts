@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { auth, currentUser } from "@clerk/nextjs/server";
 
-// Create a new post
 export async function POST(request: Request) {
   const session = await auth();
   const userId = session.userId;
